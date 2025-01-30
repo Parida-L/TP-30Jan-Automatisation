@@ -14,8 +14,11 @@ class HomePage(BasePage):
     PRODUCT2_ADD_TO_CART_BTN = (By.XPATH, "//div[@class='features_items']/div[3]//div[@class='product-overlay']//a[.='Add to cart']")
     PRODUCT2_VIEW_DETAILS_BTN = (By.XPATH, "//a[@href='/product_details/2']")
     HOME_NAV_BTN = (By.XPATH, "//a[contains(.,'Home')]")
-    PRODUCTS_NAV_BTN = (By.XPATH, "//a[.=' Products']")
+    PRODUCTS_NAV_BTN = (By.XPATH, "//*[@id='header']/div/div/div/div[2]/div/ul/li[3]/a")
+    CART_NAV_BTN = (By.XPATH, "//*[@id='header']/div/div/div/div[2]/div/ul/li[3]/a")
     LOGIN_NAV_BTN = (By.XPATH, "//a[contains(.,'Signup / Login')]")
+    CONTINUE_SHOPPING_BTN = (By.XPATH, "//button[@class='btn btn-success close-modal btn-block']")
+    VIEW_CART_BTN = (By.XPATH, "//u[.='View Cart']")
 
     # Initialize the class
     def __init__(self, browser):
@@ -59,3 +62,6 @@ class HomePage(BasePage):
 
     def go_to_login(self):
         self.click_element(self.LOGIN_NAV_BTN)
+
+    def go_to_cart(self):
+        self.click_element(self.CART_NAV_BTN)
