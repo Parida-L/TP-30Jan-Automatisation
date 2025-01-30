@@ -33,12 +33,12 @@ Avant d'exécuter les tests, suivez les instructions du fichier [installation.md
 
 👉 **Lancer tous les scénarios Gherkin avec** 🎯
 ```bash
-pytest tests/test_elements.py --html=report.html
+pytest tests/tests_cart.py --html=report.html
 ```
 
 👉 **Exécuter un test spécifique** 🎯
 ```bash
-pytest tests/test_elements.py --gherkin-terminal-reporter --html=report.html -k "Test_The_Radio_Button"
+pytest tests/tests_cart.py --gherkin-terminal-reporter --html=report.html -k "Test_The_Radio_Button"
 ```
 
 ---
