@@ -5,7 +5,7 @@ Feature: Purchase and Cart Management on Automation Exercise
 
   Scenario: Create an account to complete an order and download the invoice 
     Given I add products to the cart 
-#     When I create an account 
+    When I create an account 
 #     And I am logged in
 #     Then I can finalize the purchase
 #     And I can download the invoice of the purchase successfully  

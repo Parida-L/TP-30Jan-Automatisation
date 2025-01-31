@@ -19,6 +19,8 @@ class LoginPage(BasePage):
         self.browser.get('https://automationexercise.com/login')
         self.wait_for_page_load()
 
+    #LOGIN TO YOUR ACCOUNT 
+
     # Enter email in the email field
     def enter_email(self, email):
         self.enter_text(self.LOGIN_EMAIL_FIELD, email)
@@ -38,6 +40,8 @@ class LoginPage(BasePage):
         self.enter_password(password)
         self.click_login_btn()
 
+    #REGISTER A NEW ACCOUNT
+
     # Enter name in the name field
     def enter_new_name(self, name):
         self.enter_text(self.NAME_REGISTER_FIELD, name)
@@ -49,3 +53,10 @@ class LoginPage(BasePage):
     # Click the signup button
     def click_signup_btn(self):
         self.click_element(self.SIGNUP_BTN)
+
+    # Perform signup action
+    def signup(self, name, email):
+        """Enter credentials and click signup"""
+        self.enter_new_name(name)
+        self.enter_new_email(email)
+        self.click_signup_btn()

@@ -1,7 +1,7 @@
 import random  # Importing the random module to generate random choices
 import string  # Importing string module to use lowercase letters and digits
 
-def random_email():
+def generate_random_email():
     """
     Generate a random email address with a random domain.
     
@@ -23,5 +23,3 @@ def random_email():
     # Construct the final email address
     return f"{username}@{domain}"
 
-# Generate and print a random email
-print(random_email())  # Example output: s9dhd2k4l3@automation.io

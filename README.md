@@ -1,19 +1,39 @@
-# 🚀 Automatisation des Tests - Automation Exercise
+# 🚀 WIP - TP Automatisation des Tests - Automation Exercise
 
 ## 📌 Présentation
 
-Ce projet permet d'automatiser les tests du site [Automation Exercise](http://automationexercise.com) en utilisant **Selenium**. Il vise à tester le processus d'achat et la gestion du panier. 🛒🛍️
+Ce projet permet d'automatiser les tests du site [Automation Exercise](http://automationexercise.com) en utilisant **Selenium** avec l'approche Page Object Model (POM). Il vise à tester le processus d'achat et la gestion du panier. 🛒🛍️
 
 L'énoncé initial se trouve dans le fichier [enonce.md](./enonce.md)
 
 ---
 
-## 📂 Structure du Projet
+## 🎯 **Pourquoi le choix du Page Object Model (POM) ?**
+L'approche **POM (Page Object Model)** a été adoptée pour **rendre les tests plus modulaires, maintenables et réutilisables**.  
+Chaque page du site est représentée par une **classe dédiée**, ce qui permet :  
+✔ Une **séparation claire** entre la logique des tests et la gestion des éléments de l'interface.  
+✔ Une **réutilisation des méthodes** entre plusieurs scénarios.  
+✔ Une **maintenance plus facile** en cas de changement de l'interface du site.  
 
-📁 **tests/**  (Dossier contenant les implémentations des tests Python avec Selenium)
-📁 **tests/features/** → Contient les fichiers **Gherkin** décrivant les scénarios de test.  
-📁 **utils/** → Fichiers utilitaires et fonctions d'aide pour l'exécution des tests.  
-📄 **README.md** → Ce fichier d'explication du projet. 📖
+---
+
+## 📂 **Structure du Projet**
+
+```
+📁 fixtures/         → Contient les fixtures et générateurs de données (ex: emails, mots de passe aléatoires).
+📁 pages/           → Implémentation du modèle Page Object pour chaque page du site.
+📁 tests/           → Contient les tests automatisés utilisant les pages du POM.
+📁 tests/features/  → Contient les scénarios Gherkin pour pytest-bdd.
+📄 README.md        → Documentation du projet.
+```
+
+### 🔹 **Détails des dossiers**
+| Dossier | Description |
+|---------|------------|
+| **`fixtures/`** | Contient les **fixtures Pytest** et les générateurs de **données aléatoires** (ex: `random_email.py`, `password_generator.py`). |
+| **`pages/`** | Chaque page du site est implémentée comme une **classe POM** (ex: `HomePage.py`, `SignupPage.py`). |
+| **`tests/`** | Contient les fichiers de **tests automatisés** (ex: `test_add_product.py`). |
+| **`tests/features/`** | Fichiers **Gherkin** décrivant les scénarios de test. |
 
 ---
 
@@ -33,7 +53,7 @@ Avant d'exécuter les tests, suivez les instructions du fichier [installation.md
 
 👉 **Lancer tous les scénarios Gherkin avec** 🎯
 ```bash
-pytest tests/tests_cart.py --html=report.html
+pytest tests/tests.py --html=report.html
 ```
 
 👉 **Exécuter un test spécifique** 🎯
@@ -71,5 +91,10 @@ Feature: Purchase and Cart Management on Automation Exercise
 
 Après exécution, un rapport détaillé des résultats est généré. 📈  
 Vous pouvez le retrouver dans le fichier **report.html** après chaque test.
+
+---
+
+## 🔥 **A TERMINER **
+🚀 **terminer les scénarios** (ex: Paiement, Validation de livraison).  
 
 ---
